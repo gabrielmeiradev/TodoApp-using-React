@@ -1,0 +1,207 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+* {
+    font-family: 'Rubik', sans-serif;
+}
+
+button{
+    border: 0;
+}
+
+.banner{
+    background-image: url('https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80');
+    background-size: cover;
+    height: 40vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+
+.no-todos{
+    display: grid !important;
+    place-items: center;
+}
+
+.todo.completed {
+    background: rgba(0, 255, 0, .1) !important;
+    text-decoration: line-through;
+}
+
+.app{
+    z-index: 2;
+    height: fit-content;
+    width: 50vw;
+    padding: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    .app{
+        width: 80vw
+    }
+
+    .tool-list P, .tool-name, .creator-tag p{
+        display: none;
+    }
+
+    .creator-tag{
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 50%;
+        padding: 0 !important;
+        display: grid !important;
+        place-items: center !important;
+    }
+    
+    .app > .title{
+        font-size: 1.4rem;
+    }
+
+    .tool-list{
+        margin-top: 7px !important;
+    }
+}
+
+.app > .title{
+    color: #FFFFFF;
+    letter-spacing: .1rem;
+}
+
+.add-todo-form{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.add-todo-form button[type="submit"]{
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    background: rgb(1, 5, 37);
+    color: rgb(212, 212, 212);
+    padding: 15px;
+}
+
+.add-todo{
+    flex: 1;
+    box-sizing: border-box;
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, .8);
+    backdrop-filter: blur(5px);
+    font-size: 1rem;
+}
+
+.todo{
+    width: 100%;
+    background: #FFFFFF;
+    padding: 10px 30px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.todo-list{
+    margin-top: 20px;
+    box-shadow: 0 0 32px 16px rgba(0, 0, 0, .1);
+    border-radius: 5px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 60vh;
+    background: rgba(255, 255, 255, 1);
+}
+
+.todo-list::-webkit-scrollbar{
+    display: none;
+}
+
+.todo:nth-child(odd){
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.todo-title{
+    font-size: 1.2rem;
+}
+
+.tool-list{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.tool{
+    flex: 1;
+}
+
+.tool button{
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 1rem;
+    background: rgb(1, 5, 37);
+    color: rgb(212, 212, 212);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.nothing{
+    color: rgba(0, 0, 0, .3);
+}
+
+.creator-tag{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    border-radius: 60px;
+    background-color: #C41067;
+    cursor: move;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    color: white;
+    gap: 10px;
+    padding: 0px 20px;
+    transition: .2s ease;
+    z-index: 999;
+}
+
+.creator-tag:hover{
+    transform: scale(1.1);
+    box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, 
+                rgba(240, 46, 170, 0.3) 10px 10px, 
+                rgba(240, 46, 170, 0.2) 15px 15px, 
+                rgba(240, 46, 170, 0.1) 20px 20px, 
+                rgba(240, 46, 170, 0.05) 25px 25px;
+}
+
+.creator-tag-tag{
+    animation: alternate tagRotation 2s infinite;
+}
+
+@keyframes tagRotation {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
