@@ -1,24 +1,16 @@
 import React from "react";
 
 const TodosList = ({todos, setTodos}) => {
+
     function checkboxChange(event, todo){
         let newTodo = []
         for(var to of todos){
-            if(to.id === todo.id && to.checked){
+            if(to.id === todo.id){
                 newTodo.push({
-                    id: to.id,
-                    title: to.title,
-                    checked: false,
-                    completed: to.completed
+                    ...to, checked: !to.checked
                 })
-            } else if(to.id === todo.id && !to.checked){
-                newTodo.push({
-                    id: to.id, 
-                    title: to.title,
-                    checked: true,
-                    completed: to.completed
-                })
-            } else {
+            }
+            else {
                 newTodo.push(to)
             }
         }
@@ -44,12 +36,13 @@ const TodosList = ({todos, setTodos}) => {
                                 .find(thisTodo => thisTodo.id === todo.id)
                                 .completed
                                 ? "todo completed" : "todo" 
-                            } 
+                            }
+
                             key={todo.id}
                             onClick={
                                 (e) => todoClickHandle(e, todo)
                             }
-                            >
+                        >
                             <input 
                             type="checkbox" 
                             onChange={
@@ -61,6 +54,7 @@ const TodosList = ({todos, setTodos}) => {
                                     .checked
                             }/>
                             <p className="todo-title">{todo.title}</p>
+                            <span className="todo-details">{todo.time}</span>
                         </div>
                     )
                 }) : <p className="nothing">Nothing here... Add an item</p>

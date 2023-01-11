@@ -27,7 +27,13 @@ const Form = ({input, setInput, todos, setTodos, editTodo, setEditTodo}) => {
     const onSubmitForm = (e) => {
         e.preventDefault();
         if(!editTodo){
-            setTodos([...todos, {id: uuidv4(), title: input, checked: false, completed: false}])
+            let date = new Date();
+            let hours = date.getHours() < 9 ? '0' + date.getHours() : date.getHours();
+            let minutes = date.getMinutes() < 9 ? '0' + date.getMinutes() : date.getMinutes();
+            let day = date.getDate() < 9 ? '0' + date.getDate() : date.getDate();
+            let month = (date.getMonth() + 1) < 9 ? '0' + (date.getMonth() + 1) : date.getMonth();
+            let time = `${hours}:${minutes} ${day}/${month}`
+            setTodos([...todos, {id: uuidv4(), title: input, checked: false, completed: false, time: time}])
             setInput("");
         } else {
             updateTodo(input, editTodo.id)

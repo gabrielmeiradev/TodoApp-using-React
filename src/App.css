@@ -16,7 +16,7 @@ button{
 }
 
 .banner{
-    background-image: url('https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80');
+    background-image: url('./assets/bg.avif');
     background-size: cover;
     height: 40vh;
     width: 100vw;
@@ -29,6 +29,7 @@ button{
 .no-todos{
     display: grid !important;
     place-items: center;
+    user-select: none;
 }
 
 .todo.completed {
@@ -110,6 +111,7 @@ button{
     display: flex;
     gap: 10px;
     align-items: center;
+    user-select: none;
     box-sizing: border-box;
 }
 
@@ -134,6 +136,11 @@ button{
 
 .todo-title{
     font-size: 1.2rem;
+}
+
+.todo-details{
+    font-size: .8rem;
+    color: #ccc;
 }
 
 .tool-list{

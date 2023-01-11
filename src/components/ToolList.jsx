@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ToolList = ({todos, setTodos, input, setInput, setEditTodo}) => {
 
@@ -21,33 +21,43 @@ const ToolList = ({todos, setTodos, input, setInput, setEditTodo}) => {
         let newTodo = []
         for(var todo of todos){
             switch(true){
+
                 case todo.checked && !todo.completed:
                     newTodo.push({
                         ...todo, completed: true, checked: false
                     })
                     break;
+
                 case !todo.checked && todo.completed:
                     newTodo.push({
                         ...todo, completed: true, checked: false
                     })
                     break;
+
                 case todo.checked && todo.completed:
                     newTodo.push({
                         ...todo, completed: false, checked: false
                     })
                     break;
+
                 default:
                     newTodo.push({
                         ...todo, checked: false
                     })
+                    break;
             }
             
         }
         setTodos(newTodo)
+
     };
+    
+    const KeyboardListener = (e) => {
+        console.log(e)
+    }
 
     return(
-        <div className="tool-list">
+        <div className="tool-list" onKeyDown={KeyboardListener}>
             <p>Actions: </p>
            <div className="tool">
             <button className="remove" onClick={removeHandle}>
@@ -55,7 +65,7 @@ const ToolList = ({todos, setTodos, input, setInput, setEditTodo}) => {
                     delete
                 </span> 
                     <span className="tool-name">
-                    Remove todo(s)
+                   Remove todo(s)
                     </span>
                 </button>
            </div>
@@ -65,7 +75,7 @@ const ToolList = ({todos, setTodos, input, setInput, setEditTodo}) => {
                 edit_note
             </span>
             <span className="tool-name">
-                Rename Todo
+                 Rename Todo
             </span>
             </button>
            </div>
@@ -75,7 +85,7 @@ const ToolList = ({todos, setTodos, input, setInput, setEditTodo}) => {
             check_circle
             </span>
             <span className="tool-name">
-                Set to (un)done
+                 Set to (un)done
             </span>
                 </button>
            </div>
