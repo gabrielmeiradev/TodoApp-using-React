@@ -83,13 +83,14 @@ button{
 }
 
 .add-todo-form button[type="submit"]{
-    border-radius: 5px;
-    padding: 10px;
     cursor: pointer;
-    font-size: 1rem;
-    background: rgb(1, 5, 37);
+    background: none;
     color: rgb(212, 212, 212);
     padding: 15px;
+}
+
+.add-todo-form span{
+    font-size: 1.5rem;
 }
 
 .add-todo{

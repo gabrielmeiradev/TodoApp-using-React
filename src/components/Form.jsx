@@ -51,7 +51,7 @@ const Form = ({input, setInput, todos, setTodos, editTodo, setEditTodo}) => {
             />
             <button type="submit">
             <span class="material-symbols-outlined">
-            send
+            add_circle
             </span>
             </button>
         </form>
