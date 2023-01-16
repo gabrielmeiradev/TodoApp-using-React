@@ -10,6 +10,10 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [editTodo, setEditTodo] = useState(null)
 
+  const creatorTagHandle = () => {
+    window.location = 'https://gabrielmeiradev.github.io/'
+  }
+
   return (
     <>
       <div className='banner'></div>
@@ -37,12 +41,10 @@ function App() {
         />
       </div>
       <Draggable>
-              <a href='https://gabrielmeiradev.github.io' target="_blank">
-                <div className='creator-tag'>
-                  <img src='tag.svg' className='creator-tag-tag'></img>
-                  <p>Gabriel Meira</p>
-                </div>
-              </a>
+        <div className='creator-tag' onClick={creatorTagHandle}>
+          <img src='tag.svg' className='creator-tag-tag'></img>
+          <p>Gabriel Meira</p>
+        </div>
       </Draggable>
     </>
   )
