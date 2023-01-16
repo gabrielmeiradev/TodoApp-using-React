@@ -9,11 +9,6 @@ function App() {
   const [input, setInput] = useState("");
   const [todos, setTodos] = useState([]);
   const [editTodo, setEditTodo] = useState(null)
-  const [draggingTag, setDraggingTag] = useState(false)
-
-  const creatorTagHandle = () => {
-    window.location = "https://gabrielmeiradev.github.io"
-  }
 
   return (
     <>
@@ -42,10 +37,12 @@ function App() {
         />
       </div>
       <Draggable>
-          <div className='creator-tag' onClick={creatorTagHandle}>
-            <img src='tag.svg' className='creator-tag-tag'></img>
-            <p>Gabriel Meira</p>
-          </div>
+          <a href='https://gabrielmeiradev.github.io' target="_blank">
+            <div className='creator-tag'>
+              <img src='tag.svg' className='creator-tag-tag'></img>
+              <p>Gabriel Meira</p>
+            </div>
+          </a>
       </Draggable>
     </>
   )
