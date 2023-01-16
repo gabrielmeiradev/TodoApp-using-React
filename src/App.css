@@ -49,17 +49,12 @@ button{
         width: 80vw
     }
 
-    .tool-list P, .tool-name, .creator-tag p{
+    .tool-list P, .tool-name {
         display: none;
     }
 
-    .creator-tag{
-        width: 40px !important;
-        height: 40px !important;
-        border-radius: 50%;
-        padding: 0 !important;
-        display: grid !important;
-        place-items: center !important;
+    .creator-tag{ 
+        display: none !important;
     }
     
     .app > .title{

@@ -37,12 +37,12 @@ function App() {
         />
       </div>
       <Draggable>
-          <a href='https://gabrielmeiradev.github.io' target="_blank">
-            <div className='creator-tag'>
-              <img src='tag.svg' className='creator-tag-tag'></img>
-              <p>Gabriel Meira</p>
-            </div>
-          </a>
+              <a href='https://gabrielmeiradev.github.io' target="_blank">
+                <div className='creator-tag'>
+                  <img src='tag.svg' className='creator-tag-tag'></img>
+                  <p>Gabriel Meira</p>
+                </div>
+              </a>
       </Draggable>
     </>
   )
