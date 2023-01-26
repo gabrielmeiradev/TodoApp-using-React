@@ -18,7 +18,7 @@ function App() {
     <>
       <div className='banner'></div>
       <div className='app'>
-        <h1 className='title'>Todo app (React + Vite)</h1>
+        <h1 className='title'>TodoMore</h1>
         <Form 
           input={input}
           setInput={setInput}
